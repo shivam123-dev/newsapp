@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import noImage from "./no-image.jpg";
-export class NewsItem extends Component {
-  render() {
+const NewsItem = (props) => {
     let {
       title,
       description,
@@ -13,7 +12,7 @@ export class NewsItem extends Component {
       date,
       source,
       author,
-    } = this.props;
+    } = props;
     return (
       <>
         <div>
@@ -55,7 +54,6 @@ export class NewsItem extends Component {
         </div>
       </>
     );
-  }
 }
 
 export default NewsItem;
