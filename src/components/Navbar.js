@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const Navbar = (props) => {
-  let { mode } = props;
+  let { mode, toggleMode, color, btnMode } = props;
   return (
-    <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
+    <nav
+      className={`navbar navbar-expand-lg fixed-top navbar-${mode} bg-${mode}`}
+    >
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           Newsify
@@ -52,6 +54,19 @@ const Navbar = (props) => {
               </Link>
             </li>
           </ul>
+        </div>
+        <div className="form-check form-switch form-check-reverse">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckReverse"
+            onClick={toggleMode}
+          />
+          <label
+            htmlFor="flexSwitchCheckReverse"
+            style={{ color: `${color}` }}
+          >{`Enable ${btnMode} mode`}</label>
         </div>
       </div>
     </nav>

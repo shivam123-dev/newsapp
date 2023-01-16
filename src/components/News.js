@@ -48,7 +48,7 @@ const News = (props) => {
     <>
       <h2
         className="text-center"
-        style={{ color: `${color}`, margin: "35px 0px" }}
+        style={{ color: `${color}`, margin: "35px 0px", marginTop: "90px" }}
       >
         {`Newsify - Top ${
           props.category[0].toUpperCase() + props.category.substring(1)

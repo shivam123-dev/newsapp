@@ -35,20 +35,7 @@ const App = () => {
     <>
       <LoadingBar color={color} progress={progress} />
       <Router>
-        <Navbar mode={mode} />
-        <div className="form-check form-switch float-sm-end">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
-            onClick={toggleMode}
-          />
-          <label
-            htmlFor="flexSwitchCheckDefault"
-            style={{ color: `${color}` }}
-          >{`Enable ${btnMode} mode`}</label>
-        </div>
+        <Navbar mode={mode} toggleMode = {toggleMode} color = {color} btnMode = {btnMode}/>
         <Routes>
           <Route
             exact
