@@ -11,7 +11,6 @@ const News = (props) => {
   const capitalizeFirstLetter = (string) => {
     return string[0].toUpperCase() + string.substring(1);
   };
-  document.title = `Newsify - ${capitalizeFirstLetter(props.category)}`;
   const updateNews = async () => {
     props.setProgress(10);
     let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
@@ -26,8 +25,8 @@ const News = (props) => {
   };
   useEffect(() => {
     updateNews();
-  }, [])
-  
+    document.title = `Newsify - ${capitalizeFirstLetter(props.category)}`;
+  }, []);
 
   const fetchMoreData = async () => {
     setPage(page + 1);
